@@ -5,45 +5,47 @@ import java.awt.event.ActionListener;
 public class MainWindow {
 
     JFrame mainWindow;
+
+    //menus
     JMenuBar menuBar;
+    JMenu gameMenu;
 
     public MainWindow(int width, int height){
 
-    mainWindow = new JFrame("JPoints");
-    mainWindow.setSize(700,500);
-    mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainWindow = new JFrame("JPoints");
+        mainWindow.setSize(700,500);
+        mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    menuBar = new JMenuBar();
+        menuBar = new JMenuBar();
 
-    JMenu file = new JMenu("menu");
+        JMenu gameMenu = new JMenu("Spiel");
+        menuBar.add(gameMenu);
 
-    menuBar.add(file);
+        JMenuItem newGame= new JMenuItem("Neues Spiel");
+        JMenuItem exit = new JMenuItem("Beenden");
 
-    JMenuItem exit = new JMenuItem("Beenden");
-    JMenuItem newGame= new JMenuItem("neues Spiel");
-
-    file.add(exit);
-    file.add(newGame);
-
+        gameMenu.add(newGame);
+        gameMenu.add(exit);
 
 
-    newGame.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-           JOptionPane.showMessageDialog(null,"hallo das ist ein test");
 
-        }
-    });
+        newGame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               JOptionPane.showMessageDialog(null,"hallo das ist ein test");
+
+            }
+        });
 
 
-    exit.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            System.exit(0);
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
 
-        }
-    });
-    mainWindow.setJMenuBar(menuBar);
+            }
+        });
+        mainWindow.setJMenuBar(menuBar);
 
     }
 
