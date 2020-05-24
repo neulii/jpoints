@@ -26,7 +26,7 @@ public class MainWindowMenuListener implements ActionListener {
             	//TODO new game listener
                 //JOptionPane.showMessageDialog(null,"neu");
                 
-            	new NewGameWindow().show();;
+            	new NewGameWindow().setVisible(true);
             	
             	
             	break;
