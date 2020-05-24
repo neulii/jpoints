@@ -54,7 +54,6 @@ public class MainWindow {
 
     public void show(){
         mainWindow.setVisible(true);
-
     }
 
 }
