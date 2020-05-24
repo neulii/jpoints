@@ -1,3 +1,6 @@
 /jPoints.iml
 /.idea/
 /out/production/jPoints/
+/bin/
+/.project
+/.classpath
