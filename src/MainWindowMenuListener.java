@@ -4,6 +4,12 @@ import java.awt.event.ActionListener;
 
 public class MainWindowMenuListener implements ActionListener {
 
+    JFrame window;
+
+    public MainWindowMenuListener(JFrame window) {
+    this.window = window;
+
+    }
 
     public void actionPerformed(ActionEvent e)
     {
@@ -20,9 +26,9 @@ public class MainWindowMenuListener implements ActionListener {
 
 
             case "Beenden":
-            //TODO beenden listener
 
-                JOptionPane.showMessageDialog(null,"end");
+
+               window.dispose();
 
                 break;
 
