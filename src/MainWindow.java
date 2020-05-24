@@ -17,6 +17,7 @@ public class MainWindow {
         mainWindow = new JFrame("JPoints");
         mainWindow.setSize(700,500);
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainWindow.setLocationRelativeTo(null);
 
         menuBar = new JMenuBar();
 
@@ -38,7 +39,7 @@ public class MainWindow {
 
         infoMenu.add(info);
 
-        menuActionListener = new MainWindowMenuListener();
+        menuActionListener = new MainWindowMenuListener(mainWindow);
 
         newGame.addActionListener(menuActionListener);
         exit.addActionListener(menuActionListener);
