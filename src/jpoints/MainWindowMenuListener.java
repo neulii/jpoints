@@ -8,7 +8,7 @@ public class MainWindowMenuListener implements ActionListener {
     JFrame window;
 
     public MainWindowMenuListener(JFrame window) {
-    this.window = window;
+    	this.window = window;
 
     }
 
@@ -18,15 +18,19 @@ public class MainWindowMenuListener implements ActionListener {
     	//get text from menuItem
         String text = ((JMenuItem)(e.getSource())).getText();
 
-
-
         switch (text)
         {
             case "Neues Spiel":
             	//TODO new game listener
-                //JOptionPane.showMessageDialog(null,"neu");
                 
-            	new NewGameWindow().setVisible(true);
+            	NewGameWindow newGameWindow = new NewGameWindow(window);
+            	
+         
+            	newGameWindow.showModal();
+            	
+            	
+            	
+            	
             	
             	
             	break;
@@ -45,15 +49,6 @@ public class MainWindowMenuListener implements ActionListener {
 
                 break;
 
-
         }
-
-
-
-
-
-
-
-
     }
 }
