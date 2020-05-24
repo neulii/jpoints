@@ -10,6 +10,8 @@ public class MainWindow {
     JMenuBar menuBar;
     JMenu gameMenu;
 
+    MainWindowMenuListener menuActionListener;
+
     public MainWindow(int width, int height){
 
         mainWindow = new JFrame("JPoints");
@@ -19,32 +21,31 @@ public class MainWindow {
         menuBar = new JMenuBar();
 
         JMenu gameMenu = new JMenu("Spiel");
+        JMenu infoMenu = new JMenu("Info");
+
         menuBar.add(gameMenu);
+        menuBar.add(infoMenu);
 
         JMenuItem newGame= new JMenuItem("Neues Spiel");
         JMenuItem exit = new JMenuItem("Beenden");
+
+        JMenuItem info = new JMenuItem("Info");
+
 
         gameMenu.add(newGame);
         gameMenu.add(exit);
 
 
+        infoMenu.add(info);
 
-        newGame.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               JOptionPane.showMessageDialog(null,"hallo das ist ein test");
+        menuActionListener = new MainWindowMenuListener();
 
-            }
-        });
+        newGame.addActionListener(menuActionListener);
+        exit.addActionListener(menuActionListener);
+        info.addActionListener(menuActionListener);
 
 
-        exit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
 
-            }
-        });
         mainWindow.setJMenuBar(menuBar);
 
     }
