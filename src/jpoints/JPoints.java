@@ -1,3 +1,4 @@
+package jpoints;
 public class JPoints {
 
     private static MainWindow mainWindow;
