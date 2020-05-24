@@ -12,7 +12,11 @@ public class NewGameWindow {
 	private PlayerInputPanel playerOne;
 	private PlayerInputPanel playerTwo;
 	
+	private JLabel createGameLabel;
+	
 	private JDialog window;
+	private JButton okButton;
+	private JButton cancelButton;
 	
 	public NewGameWindow(JFrame parentWindow) {
 		
@@ -26,9 +30,10 @@ public class NewGameWindow {
 		window.setModalExclusionType(null);
 		
 		
-		JLabel creatGameLabel = new JLabel("Spieler erstellen:");
-		creatGameLabel.setBounds(30, 20, 216, 16);
-		window.getContentPane().add(creatGameLabel);
+		createGameLabel = new JLabel("Spieler erstellen:");
+		createGameLabel.setBounds(30, 20, 216, 16);
+		
+		window.getContentPane().add(createGameLabel);
 		
 		playerOne = new PlayerInputPanel(150,250,50,"spieler 1:",30);
 		playerOne.setLocation(30,50);
@@ -42,9 +47,13 @@ public class NewGameWindow {
 		window.getContentPane().add(playerOne);
 		window.getContentPane().add(playerTwo);
 		
-		JButton okButton = new JButton("OK");
-		okButton.setBounds(156, 204, 138, 52);
+		okButton = new JButton("OK");
+		okButton.setBounds(78, 204, 138, 52);
 		window.getContentPane().add(okButton);
+		
+		cancelButton = new JButton("Abbrechen");
+		cancelButton.setBounds(230, 204, 138, 52);
+		window.getContentPane().add(cancelButton);
 	}
 	
 	public void showModal()
