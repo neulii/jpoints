@@ -1,27 +1,41 @@
 package jpoints;
 
 import javax.swing.JPanel;
-import java.awt.GridLayout;
+import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class PlayerInputPanel extends JPanel {
-	private JTextField textField;
+	
+	private JTextField inputName;
+	private JLabel playerNameLabel;
 
-	/**
-	 * Create the panel.
-	 */
-	public PlayerInputPanel() {
-		setLayout(new GridLayout(0, 2, 0, 0));
+	public PlayerInputPanel(int width, int height, String labelText, float textSize) {
+	
+		setLayout(null);
 		
-		this.setSize(300, 50);
-		JLabel lblNewLabel = new JLabel("New label");
-		add(lblNewLabel);
+		this.setSize(width, height);
 		
-		textField = new JTextField();
-		add(textField);
-		textField.setColumns(10);
-
+		this.setBackground(Color.red);
+		
+		playerNameLabel = new JLabel(labelText);
+		
+		playerNameLabel.setLocation(0, 0);
+		playerNameLabel.setOpaque(true);
+		playerNameLabel.setBackground(Color.blue);
+		playerNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		playerNameLabel.setSize((int)(width)/3,height);
+	
+		playerNameLabel.setFont(playerNameLabel.getFont().deriveFont(textSize));
+		add(playerNameLabel);
+		
+		inputName = new JTextField();
+		inputName.setLocation(width/3, 0);
+		inputName.setSize(width-playerNameLabel.getWidth(),height);
+		inputName.setHorizontalAlignment(SwingConstants.CENTER);
+		inputName.setFont(playerNameLabel.getFont().deriveFont(textSize));
+		add(inputName);
 	}
-
 }
