@@ -8,6 +8,8 @@ public class MainWindow {
     //menus
     JMenuBar menuBar;
     JMenu gameMenu;
+    
+    Game game;
 
     MainWindowMenuListener menuActionListener;
 
@@ -38,7 +40,7 @@ public class MainWindow {
 
         infoMenu.add(info);
 
-        menuActionListener = new MainWindowMenuListener(mainWindow);
+        menuActionListener = new MainWindowMenuListener(mainWindow, game);
 
         newGame.addActionListener(menuActionListener);
         exit.addActionListener(menuActionListener);
