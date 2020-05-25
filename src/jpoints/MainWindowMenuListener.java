@@ -6,9 +6,11 @@ import java.awt.event.ActionListener;
 public class MainWindowMenuListener implements ActionListener {
 
     JFrame window;
-
-    public MainWindowMenuListener(JFrame window) {
+    Game game;
+    
+    public MainWindowMenuListener(JFrame window, Game game) {
     	this.window = window;
+    	this.game = game;
 
     }
 
@@ -26,11 +28,7 @@ public class MainWindowMenuListener implements ActionListener {
             	NewGameWindow newGameWindow = new NewGameWindow(window);
             	
          
-            	newGameWindow.showModal();
-            	
-            	
-            	
-            	
+            	game = newGameWindow.showModal();
             	
             	
             	break;

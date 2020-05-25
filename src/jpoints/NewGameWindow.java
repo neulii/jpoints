@@ -56,9 +56,11 @@ public class NewGameWindow {
 		window.getContentPane().add(cancelButton);
 	}
 	
-	public void showModal()
+	//TODO game must be created here
+	public Game showModal()
 	{
 		window.setVisible(true);
 		
+		return null;
 	}
 }
