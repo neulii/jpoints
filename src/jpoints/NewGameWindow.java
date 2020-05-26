@@ -18,6 +18,8 @@ public class NewGameWindow {
 	private JButton okButton;
 	private JButton cancelButton;
 	
+	private Game newGame;
+	
 	public NewGameWindow(JFrame parentWindow) {
 		
 		window = new JDialog(parentWindow, "Neues Spiel erstellen", JDialog.ModalityType.DOCUMENT_MODAL);
@@ -50,12 +52,12 @@ public class NewGameWindow {
 		okButton = new JButton("OK");
 		okButton.setBounds(78, 204, 138, 52);
 		window.getContentPane().add(okButton);
-		okButton.addActionListener(new NewGameWindowListener(window));
+		okButton.addActionListener(new NewGameWindowListener(window,newGame));
 		
 		cancelButton = new JButton("Abbrechen");
 		cancelButton.setBounds(230, 204, 138, 52);
 		window.getContentPane().add(cancelButton);
-		cancelButton.addActionListener(new NewGameWindowListener(window));
+		cancelButton.addActionListener(new NewGameWindowListener(window,newGame));
 		
 	}
 	

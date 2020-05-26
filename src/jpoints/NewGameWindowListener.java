@@ -15,12 +15,14 @@ import javax.swing.JOptionPane;
 
 public class NewGameWindowListener implements ActionListener {
 	
-	private JDialog newGameWindow;
+	JDialog newGameWindow;
+	Game newGame;
 	
 
-	public NewGameWindowListener(JDialog newGameWindow)
+	public NewGameWindowListener(JDialog newGameWindow, Game newGame)
 	{
 		this.newGameWindow = newGameWindow;
+		this.newGame = newGame;
 	}
 
 	@Override
@@ -38,6 +40,8 @@ public class NewGameWindowListener implements ActionListener {
 		case "Abbrechen":
 			
 			JOptionPane.showMessageDialog(newGameWindow, "abbrechen");
+			
+			
 			
 			break;
 			
