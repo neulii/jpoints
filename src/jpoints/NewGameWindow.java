@@ -50,10 +50,13 @@ public class NewGameWindow {
 		okButton = new JButton("OK");
 		okButton.setBounds(78, 204, 138, 52);
 		window.getContentPane().add(okButton);
+		okButton.addActionListener(new NewGameWindowListener(window));
 		
 		cancelButton = new JButton("Abbrechen");
 		cancelButton.setBounds(230, 204, 138, 52);
 		window.getContentPane().add(cancelButton);
+		cancelButton.addActionListener(new NewGameWindowListener(window));
+		
 	}
 	
 	//TODO game must be created here
