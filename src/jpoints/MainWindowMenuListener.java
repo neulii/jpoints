@@ -23,13 +23,10 @@ public class MainWindowMenuListener implements ActionListener {
         switch (text)
         {
             case "Neues Spiel":
-            	//TODO new game listener
-                
+            	               
             	NewGameWindow newGameWindow = new NewGameWindow(window);
-            	
-         
+            	         
             	game = newGameWindow.showModal();
-            	
             	
             	break;
 
@@ -42,8 +39,8 @@ public class MainWindowMenuListener implements ActionListener {
                 break;
 
             case "Info":
-            //TODO info listener
-                JOptionPane.showMessageDialog(null,"info");
+            	//TODO info listener
+                //JOptionPane.showMessageDialog(null,"info");
 
                 break;
 
