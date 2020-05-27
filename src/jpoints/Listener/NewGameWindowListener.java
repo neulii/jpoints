@@ -1,6 +1,7 @@
 package jpoints.Listener;
 
 import jpoints.Game;
+import jpoints.NewGameWindow;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,11 +18,11 @@ import javax.swing.JOptionPane;
 
 public class NewGameWindowListener implements ActionListener {
 	
-	JDialog newGameWindow;
+	NewGameWindow newGameWindow;
 	Game newGame;
 	
 
-	public NewGameWindowListener(JDialog newGameWindow, Game newGame)
+	public NewGameWindowListener(NewGameWindow newGameWindow, Game newGame)
 	{
 		this.newGameWindow = newGameWindow;
 		this.newGame = newGame;
@@ -30,18 +31,31 @@ public class NewGameWindowListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String buttonText = ((JButton)(e.getSource())).getText();
-		
+
+		//TODO check inputs and implememt listener
 		switch(buttonText)
 		{
 		case "OK":
-			
-			JOptionPane.showMessageDialog(newGameWindow, "OK");
+
+			//check inputs
+
+			String pTwoName = newGameWindow.getPlayerInputPanelOne().getInputName();
+			String pOneName = newGameWindow.getPlayerInputPanelTwo().getInputName();
+
+
+			if( (pOneName.length()==0) || (pTwoName.length() ==0))
+			{
+				JOptionPane.showMessageDialog(null, "bitte eingaben überprüfen");
+				return;
+			}
+
+			//JOptionPane.showMessageDialog(null, "OK");
 			
 			break;
 			
 		case "Abbrechen":
 			
-			JOptionPane.showMessageDialog(newGameWindow, "abbrechen");
+			JOptionPane.showMessageDialog(null, "abbrechen");
 			
 			
 			

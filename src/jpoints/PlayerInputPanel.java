@@ -38,7 +38,16 @@ public class PlayerInputPanel extends JPanel {
 		inputName.setFont(playerNameLabel.getFont().deriveFont(textSize));
 		add(inputName);
 	}
-	
+
+	/**
+	 *
+	 * @return the input from the textfield
+	 */
+	public String getInputName()
+	{
+		return inputName.getText();
+	}
+
 	public void setLabelBackground(Color color)
 	{
 		playerNameLabel.setBackground(color);

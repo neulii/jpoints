@@ -54,12 +54,12 @@ public class NewGameWindow {
 		okButton = new JButton("OK");
 		okButton.setBounds(78, 204, 138, 52);
 		window.getContentPane().add(okButton);
-		okButton.addActionListener(new NewGameWindowListener(window,newGame));
+		okButton.addActionListener(new NewGameWindowListener(this,newGame));
 		
 		cancelButton = new JButton("Abbrechen");
 		cancelButton.setBounds(230, 204, 138, 52);
 		window.getContentPane().add(cancelButton);
-		cancelButton.addActionListener(new NewGameWindowListener(window,newGame));
+		cancelButton.addActionListener(new NewGameWindowListener(this,newGame));
 		
 	}
 	
@@ -69,5 +69,15 @@ public class NewGameWindow {
 		window.setVisible(true);
 		
 		return null;
+	}
+
+	public PlayerInputPanel getPlayerInputPanelOne()
+	{
+		return playerOne;
+	}
+
+	public PlayerInputPanel getPlayerInputPanelTwo()
+	{
+		return playerTwo;
 	}
 }
