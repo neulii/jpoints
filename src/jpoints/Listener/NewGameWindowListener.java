@@ -76,9 +76,9 @@ public class NewGameWindowListener implements ActionListener {
 
 
 			newGame = new Game(pointDiff);
-
-
-
+			newGame.addPlayer(pOne);
+			newGame.addPlayer(pTwo);
+			
 
 
 

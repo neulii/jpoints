@@ -60,10 +60,12 @@ public class NewGameWindow {
 		cancelButton.setBounds(230, 204, 138, 52);
 		window.getContentPane().add(cancelButton);
 		cancelButton.addActionListener(new NewGameWindowListener(this,newGame));
+	
+		//TODO diffpoints to win needs a text input field 
 		
 	}
 	
-	//TODO game must be created here
+	//TODO game must be return here
 	public Game showModal()
 	{
 		window.setVisible(true);
