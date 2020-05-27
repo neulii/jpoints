@@ -2,13 +2,12 @@ package jpoints.Listener;
 
 import jpoints.Game;
 import jpoints.NewGameWindow;
+import jpoints.Player;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  * Listener for NewGameWindow
@@ -20,6 +19,7 @@ public class NewGameWindowListener implements ActionListener {
 	
 	NewGameWindow newGameWindow;
 	Game newGame;
+	int pointDiff;
 	
 
 	public NewGameWindowListener(NewGameWindow newGameWindow, Game newGame)
@@ -30,7 +30,10 @@ public class NewGameWindowListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String buttonText = ((JButton)(e.getSource())).getText();
+
+		JButton button = ((JButton)(e.getSource()));
+
+		String buttonText = button.getText();
 
 		//TODO check inputs and implememt listener
 		switch(buttonText)
@@ -39,15 +42,45 @@ public class NewGameWindowListener implements ActionListener {
 
 			//check inputs
 
-			String pTwoName = newGameWindow.getPlayerInputPanelOne().getInputName();
-			String pOneName = newGameWindow.getPlayerInputPanelTwo().getInputName();
+			String pOneName = newGameWindow.getPlayerInputPanelOne().getInputName();
+			String pTwoName = newGameWindow.getPlayerInputPanelTwo().getInputName();
 
-
-			if( (pOneName.length()==0) || (pTwoName.length() ==0))
+			//check first name
+			if(pOneName.length()==0)
 			{
 				JOptionPane.showMessageDialog(null, "bitte eingaben überprüfen");
+
+				JTextField textField = newGameWindow.getPlayerInputPanelOne().getInputTextField();
+				textField.requestFocus();
+				textField.selectAll();
+
+
 				return;
 			}
+			//check second name
+			else if (pTwoName.length() ==0)
+			{
+				JOptionPane.showMessageDialog(null, "bitte eingaben überprüfen");
+
+				JTextField textField = newGameWindow.getPlayerInputPanelTwo().getInputTextField();
+				textField.requestFocus();
+				textField.selectAll();
+
+				return;
+			}
+
+			//inputs are valid -> create player and games
+
+			Player pOne = new Player(pOneName);
+			Player pTwo = new Player(pTwoName);
+
+
+			newGame = new Game(pointDiff);
+
+
+
+
+
 
 			//JOptionPane.showMessageDialog(null, "OK");
 			

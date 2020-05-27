@@ -52,4 +52,9 @@ public class PlayerInputPanel extends JPanel {
 	{
 		playerNameLabel.setBackground(color);
 	}
+
+	public JTextField getInputTextField()
+	{
+		return inputName;
+	}
 }
