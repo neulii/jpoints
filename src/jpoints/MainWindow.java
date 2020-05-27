@@ -1,4 +1,6 @@
 package jpoints;
+import jpoints.Listener.MainWindowMenuListener;
+
 import javax.swing.*;
 
 public class MainWindow {
@@ -8,7 +10,7 @@ public class MainWindow {
     //menus
     JMenuBar menuBar;
     JMenu gameMenu;
-    
+
     Game game;
 
     MainWindowMenuListener menuActionListener;

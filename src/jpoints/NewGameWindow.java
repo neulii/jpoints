@@ -1,5 +1,7 @@
 package jpoints;
 
+import jpoints.Listener.NewGameWindowListener;
+
 import java.awt.Color;
 
 import javax.swing.JFrame;

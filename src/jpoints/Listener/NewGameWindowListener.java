@@ -1,4 +1,6 @@
-package jpoints;
+package jpoints.Listener;
+
+import jpoints.Game;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
