@@ -97,6 +97,9 @@ public class NewGameWindow {
 	{
 		return playerTwo;
 	}
-	//TODO
-	public JTextField
+
+	public JTextField getDiffPointTextField()
+	{
+		return pointDiffInput;
+	}
 }
