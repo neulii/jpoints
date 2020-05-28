@@ -32,6 +32,8 @@ public class Game {
 	public Game(int pointDiffToWin)
 	{
 		this.pointDiffToWin = pointDiffToWin;	
+		players = new Vector<Player>();
+		
 	}
 	
 	/**

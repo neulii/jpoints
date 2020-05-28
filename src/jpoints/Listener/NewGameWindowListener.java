@@ -48,7 +48,7 @@ public class NewGameWindowListener implements ActionListener {
 			//check first name
 			if(pOneName.length()==0)
 			{
-				JOptionPane.showMessageDialog(null, "bitte eingaben überprüfen");
+				JOptionPane.showMessageDialog(null, "bitte eingaben Ueberpruefen");
 
 				JTextField textField = newGameWindow.getPlayerInputPanelOne().getInputTextField();
 				textField.requestFocus();
@@ -60,7 +60,7 @@ public class NewGameWindowListener implements ActionListener {
 			//check second name
 			else if (pTwoName.length() ==0)
 			{
-				JOptionPane.showMessageDialog(null, "bitte eingaben überprüfen");
+				JOptionPane.showMessageDialog(null, "bitte eingaben �berpr�fen");
 
 				JTextField textField = newGameWindow.getPlayerInputPanelTwo().getInputTextField();
 				textField.requestFocus();

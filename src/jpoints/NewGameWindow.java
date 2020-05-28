@@ -14,17 +14,18 @@ import javax.swing.SwingConstants;
 
 public class NewGameWindow {
 
-	private PlayerInputPanel playerOne;
-	private PlayerInputPanel playerTwo;
+	PlayerInputPanel playerOne;
+	PlayerInputPanel playerTwo;
 	
-	private JLabel createGameLabel;
+	JLabel createGameLabel;
+	JLabel pointDiffLabel;
 	
-	private JDialog window;
-	private JButton okButton;
-	private JButton cancelButton;
+	JDialog window;
+	JButton okButton;
+	JButton cancelButton;
 	
-	private Game newGame;
-	private JTextField pointDiffInput;
+	Game newGame;
+	JTextField pointDiffInput;
 	
 	public NewGameWindow(JFrame parentWindow) {
 		
@@ -64,16 +65,16 @@ public class NewGameWindow {
 		cancelButton.setBounds(230, 260, 138, 52);
 		window.getContentPane().add(cancelButton);
 		
-		JLabel pointDiffLabel = new JLabel("Punkteunterschied zum Sieg:");
+		pointDiffLabel = new JLabel("Punkteunterschied zum Sieg:");
 		pointDiffLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		pointDiffLabel.setBounds(30, 199, 186, 37);
-		window.getContentPane().add(pointDiffLabel);
+		window.add(pointDiffLabel);
 		
 		pointDiffInput = new JTextField();
 		pointDiffInput.setHorizontalAlignment(SwingConstants.CENTER);
 		pointDiffInput.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		pointDiffInput.setBounds(230, 191, 138, 38);
-		window.getContentPane().add(pointDiffInput);
+		window.add(pointDiffInput);
 		pointDiffInput.setColumns(10);
 		cancelButton.addActionListener(new NewGameWindowListener(this,newGame));
 		
