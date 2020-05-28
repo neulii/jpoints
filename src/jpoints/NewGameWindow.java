@@ -8,6 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JTextField;
+import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class NewGameWindow {
 
@@ -21,11 +24,12 @@ public class NewGameWindow {
 	private JButton cancelButton;
 	
 	private Game newGame;
+	private JTextField pointDiffInput;
 	
 	public NewGameWindow(JFrame parentWindow) {
 		
 		window = new JDialog(parentWindow, "Neues Spiel erstellen", JDialog.ModalityType.DOCUMENT_MODAL);
-		window.setBounds(100, 100, 450, 300);
+		window.setBounds(100, 100, 453, 370);
 		window.getContentPane().setLayout(null);
 		
 		window.setLocationRelativeTo(parentWindow);
@@ -52,16 +56,26 @@ public class NewGameWindow {
 		window.getContentPane().add(playerTwo);
 		
 		okButton = new JButton("OK");
-		okButton.setBounds(78, 204, 138, 52);
+		okButton.setBounds(78, 260, 138, 52);
 		window.getContentPane().add(okButton);
 		okButton.addActionListener(new NewGameWindowListener(this,newGame));
 		
 		cancelButton = new JButton("Abbrechen");
-		cancelButton.setBounds(230, 204, 138, 52);
+		cancelButton.setBounds(230, 260, 138, 52);
 		window.getContentPane().add(cancelButton);
+		
+		JLabel pointDiffLabel = new JLabel("Punkteunterschied zum Sieg:");
+		pointDiffLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		pointDiffLabel.setBounds(30, 199, 186, 37);
+		window.getContentPane().add(pointDiffLabel);
+		
+		pointDiffInput = new JTextField();
+		pointDiffInput.setHorizontalAlignment(SwingConstants.CENTER);
+		pointDiffInput.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		pointDiffInput.setBounds(230, 191, 138, 38);
+		window.getContentPane().add(pointDiffInput);
+		pointDiffInput.setColumns(10);
 		cancelButton.addActionListener(new NewGameWindowListener(this,newGame));
-	
-		//TODO diffpoints to win needs a text input field 
 		
 	}
 	
