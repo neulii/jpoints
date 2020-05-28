@@ -68,6 +68,12 @@ public class NewGameWindowListener implements ActionListener {
 
 				return;
 			}
+			//check pointdiff input
+			else if
+			{
+				
+			}
+			
 
 			//inputs are valid -> create player and games
 

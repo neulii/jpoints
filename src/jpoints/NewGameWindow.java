@@ -97,4 +97,6 @@ public class NewGameWindow {
 	{
 		return playerTwo;
 	}
+	//TODO
+	public JTextField
 }
