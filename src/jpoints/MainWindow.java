@@ -10,6 +10,8 @@ public class MainWindow {
     //menus
     JMenuBar menuBar;
     JMenu gameMenu;
+    
+    MainGamePanel mainGamePanel;
 
     Game game;
 
@@ -65,11 +67,27 @@ public class MainWindow {
     public void showMainGamePanel()
     {
     	
+    	mainGamePanel = new MainGamePanel(game);
+    	
+    	//mainWindow.add(mainGamePanel);
+    	
+    	
     }
     
 
     public void show(){
         mainWindow.setVisible(true);
     }
+    
+    public Game getGame()
+    {
+    	return game;
+    	
+    }
+
+	public void setGame(Game newGame) {
+		game = newGame;
+		
+	}
 
 }

@@ -1,6 +1,7 @@
 package jpoints.Listener;
 
 import jpoints.Game;
+import jpoints.MainWindow;
 import jpoints.NewGameWindow;
 import jpoints.Player;
 
@@ -86,11 +87,13 @@ public class NewGameWindowListener implements ActionListener {
 			Player pTwo = new Player(pTwoName);
 			pointDiff = Integer.parseInt(diffPoints);
 
-			newGame = new Game(pointDiff);
-			newGame.addPlayer(pOne);
-			newGame.addPlayer(pTwo);
+			this.newGame = new Game(pointDiff);
+			this.newGame.addPlayer(pOne);
+			this.newGame.addPlayer(pTwo);
 			
 			newGameWindow.getMainWindow().showMainGamePanel();
+			newGameWindow.getMainWindow().setGame(newGame);
+			
 			
 			newGameWindow.dispose();
 		

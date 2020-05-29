@@ -35,7 +35,7 @@ public class NewGameWindow {
 	public NewGameWindow(MainWindow parentWindow) {
 		
 		mainWindow = parentWindow;
-		
+		newGame = mainWindow.getGame();
 		window = new JDialog(mainWindow.getFrame(), "Neues Spiel erstellen", JDialog.ModalityType.DOCUMENT_MODAL);
 		window.setBounds(100, 100, 453, 370);
 		window.getContentPane().setLayout(null);
@@ -92,12 +92,12 @@ public class NewGameWindow {
 		
 	}
 	
-	//TODO game must be return here
+	
 	public Game showModal()
 	{
 		window.setVisible(true);
 		
-		return null;
+		return newGame;
 	}
 
 	public PlayerInputPanel getPlayerInputPanelOne()

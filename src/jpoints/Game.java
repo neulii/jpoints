@@ -96,4 +96,14 @@ public class Game {
 		
 		return gameString;
 	}
+	
+	/**
+	 * 
+	 * @return the vector with the players
+	 */
+	public Vector<Player> getPlayers()
+	{
+		return players;
+		
+	}
 }
