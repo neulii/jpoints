@@ -121,4 +121,9 @@ public class NewGameWindow {
 		window.dispose();
 		
 	}
+	
+	public MainWindow getMainWindow()
+	{
+		return mainWindow;
+	}
 }

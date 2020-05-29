@@ -89,12 +89,11 @@ public class NewGameWindowListener implements ActionListener {
 			newGame = new Game(pointDiff);
 			newGame.addPlayer(pOne);
 			newGame.addPlayer(pTwo);
-		
-			//System.out.println(newGame.toString());
+			
+			newGameWindow.getMainWindow().showMainGamePanel();
 			
 			newGameWindow.dispose();
 		
-			
 			break;
 			
 		case "Abbrechen":
