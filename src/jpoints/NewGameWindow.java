@@ -6,11 +6,13 @@ import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JRootPane;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 public class NewGameWindow {
 
@@ -28,6 +30,7 @@ public class NewGameWindow {
 	JTextField pointDiffInput;
 	
 	public NewGameWindow(JFrame parentWindow) {
+		
 		
 		window = new JDialog(parentWindow, "Neues Spiel erstellen", JDialog.ModalityType.DOCUMENT_MODAL);
 		window.setBounds(100, 100, 453, 370);
@@ -60,7 +63,12 @@ public class NewGameWindow {
 		okButton.setBounds(78, 260, 138, 52);
 		window.getContentPane().add(okButton);
 		okButton.addActionListener(new NewGameWindowListener(this,newGame));
-		
+		//set default enter button
+		JRootPane rootPane = SwingUtilities.getRootPane(okButton);
+		rootPane.setDefaultButton(okButton);
+
+				
+				
 		cancelButton = new JButton("Abbrechen");
 		cancelButton.setBounds(230, 260, 138, 52);
 		window.getContentPane().add(cancelButton);
