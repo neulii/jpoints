@@ -3,8 +3,6 @@ package jpoints;
 import jpoints.Listener.NewGameWindowListener;
 
 import java.awt.Color;
-
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRootPane;
 import javax.swing.JButton;
