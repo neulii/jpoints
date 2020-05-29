@@ -95,10 +95,12 @@ public class NewGameWindowListener implements ActionListener {
 			break;
 			
 		case "Abbrechen":
+			 String[] options = new String[] {"Fohrfahren", "Abbrechen"};
+			 
+			int answer = JOptionPane.showOptionDialog(null, "Wirklich Abbrechen?","Bestaetigen",  JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
+			        null, options , options[0]  );
 			
-			int answer = JOptionPane.showConfirmDialog(null, "Wirklich Abbrechen?","Bestaetigen", JOptionPane.YES_NO_OPTION);
-			
-			if(answer == 0)
+			if(answer == 1)
 			{
 				newGameWindow.dispose();
 			}
