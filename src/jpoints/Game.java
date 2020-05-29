@@ -75,4 +75,25 @@ public class Game {
 	{
 		return pointDiffToWin;
 	}
+	
+	/**
+	 * new toString method
+	 */
+	public String toString()
+	{
+		String gameString = "";
+		
+		for(int i = 0; i<players.size();i++)
+		{
+			gameString += players.elementAt(i).getName();
+			gameString = gameString +  ": " + players.elementAt(i).getPoints() + " / ";
+			
+		}
+		
+		gameString += Integer.toString(pointDiffToWin);
+		gameString += " to Win /";
+		
+		
+		return gameString;
+	}
 }
