@@ -29,8 +29,11 @@ public class NewGameWindow {
 	Game newGame;
 	JTextField pointDiffInput;
 	
+	JFrame mainWindow;
+	
 	public NewGameWindow(JFrame parentWindow) {
 		
+		mainWindow = parentWindow;
 		
 		window = new JDialog(parentWindow, "Neues Spiel erstellen", JDialog.ModalityType.DOCUMENT_MODAL);
 		window.setBounds(100, 100, 453, 370);
@@ -114,5 +117,10 @@ public class NewGameWindow {
 	public void dispose() {
 		window.dispose();
 		
+	}
+	
+	public JFrame getMainWindow()
+	{
+		return mainWindow;
 	}
 }

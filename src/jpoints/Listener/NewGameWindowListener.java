@@ -4,7 +4,6 @@ import jpoints.Game;
 import jpoints.NewGameWindow;
 import jpoints.Player;
 
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -85,12 +84,16 @@ public class NewGameWindowListener implements ActionListener {
 
 			Player pOne = new Player(pOneName);
 			Player pTwo = new Player(pTwoName);
+			pointDiff = Integer.parseInt(diffPoints);
 
 			newGame = new Game(pointDiff);
 			newGame.addPlayer(pOne);
 			newGame.addPlayer(pTwo);
 		
-			//JOptionPane.showMessageDialog(null, "OK");
+			//System.out.println(newGame.toString());
+			
+			newGameWindow.dispose();
+		
 			
 			break;
 			

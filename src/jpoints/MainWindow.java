@@ -51,9 +51,17 @@ public class MainWindow {
 
 
         mainWindow.setJMenuBar(menuBar);
+        
+      
 
     }
 
+    //TODO show mainpanel
+    public void showMainGamePanel()
+    {
+    	
+    }
+    
 
     public void show(){
         mainWindow.setVisible(true);
