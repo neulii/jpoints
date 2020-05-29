@@ -22,24 +22,27 @@ public class NewGameWindow {
 	JLabel createGameLabel;
 	JLabel pointDiffLabel;
 	
+	JTextField pointDiffInput;
+
 	JDialog window;
+	
 	JButton okButton;
 	JButton cancelButton;
 	
 	Game newGame;
-	JTextField pointDiffInput;
 	
-	JFrame mainWindow;
 	
-	public NewGameWindow(JFrame parentWindow) {
+	MainWindow mainWindow;
+	
+	public NewGameWindow(MainWindow parentWindow) {
 		
 		mainWindow = parentWindow;
 		
-		window = new JDialog(parentWindow, "Neues Spiel erstellen", JDialog.ModalityType.DOCUMENT_MODAL);
+		window = new JDialog(mainWindow.getFrame(), "Neues Spiel erstellen", JDialog.ModalityType.DOCUMENT_MODAL);
 		window.setBounds(100, 100, 453, 370);
 		window.getContentPane().setLayout(null);
 		
-		window.setLocationRelativeTo(parentWindow);
+		window.setLocationRelativeTo(parentWindow.getFrame());
 		
 		window.setResizable(false);
 		window.setModalExclusionType(null);
@@ -117,10 +120,5 @@ public class NewGameWindow {
 	public void dispose() {
 		window.dispose();
 		
-	}
-	
-	public JFrame getMainWindow()
-	{
-		return mainWindow;
 	}
 }

@@ -1,5 +1,6 @@
 package jpoints.Listener;
 import jpoints.Game;
+import jpoints.MainWindow;
 import jpoints.NewGameWindow;
 
 import javax.swing.*;
@@ -10,10 +11,12 @@ public class MainWindowMenuListener implements ActionListener {
 
     JFrame window;
     Game game;
+    MainWindow mainWindow;
     
-    public MainWindowMenuListener(JFrame window, Game game) {
-    	this.window = window;
+    public MainWindowMenuListener(MainWindow window, Game game) {
+    	this.window = window.getFrame();
     	this.game = game;
+    	this.mainWindow = window;
 
     }
 
@@ -27,7 +30,7 @@ public class MainWindowMenuListener implements ActionListener {
         {
             case "Neues Spiel":
             	               
-            	NewGameWindow newGameWindow = new NewGameWindow(window);
+            	NewGameWindow newGameWindow = new NewGameWindow(mainWindow);
             	         
             	game = newGameWindow.showModal();
             	

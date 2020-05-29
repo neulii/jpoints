@@ -42,7 +42,7 @@ public class MainWindow {
 
         infoMenu.add(info);
 
-        menuActionListener = new MainWindowMenuListener(mainWindow, game);
+        menuActionListener = new MainWindowMenuListener(this, game);
 
         newGame.addActionListener(menuActionListener);
         exit.addActionListener(menuActionListener);
@@ -56,6 +56,11 @@ public class MainWindow {
 
     }
 
+    public JFrame getFrame()
+    {
+    	return mainWindow;
+    }
+    
     //TODO show mainpanel
     public void showMainGamePanel()
     {
