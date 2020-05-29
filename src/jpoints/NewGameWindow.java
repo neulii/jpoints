@@ -102,4 +102,9 @@ public class NewGameWindow {
 	{
 		return pointDiffInput;
 	}
+
+	public void dispose() {
+		window.dispose();
+		
+	}
 }

@@ -4,11 +4,11 @@ import jpoints.Game;
 import jpoints.NewGameWindow;
 import jpoints.Player;
 
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
-
 
 /**
  * Listener for NewGameWindow
@@ -96,7 +96,12 @@ public class NewGameWindowListener implements ActionListener {
 			
 		case "Abbrechen":
 			
-			JOptionPane.showMessageDialog(null, "abbrechen");
+			int answer = JOptionPane.showConfirmDialog(null, "Wirklich Abbrechen?","Bestaetigen", JOptionPane.YES_NO_OPTION);
+			
+			if(answer == 0)
+			{
+				newGameWindow.dispose();
+			}
 			
 			break;
 		}
