@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+
 /**
  * Listener for NewGameWindow
  * @author neulii
@@ -33,8 +34,7 @@ public class NewGameWindowListener implements ActionListener {
 		JButton button = ((JButton)(e.getSource()));
 
 		String buttonText = button.getText();
-
-		//TODO check inputs and implememt listener
+		
 		switch(buttonText)
 		{
 		case "OK":
@@ -44,19 +44,6 @@ public class NewGameWindowListener implements ActionListener {
 			String pOneName = newGameWindow.getPlayerInputPanelOne().getInputName();
 			String pTwoName = newGameWindow.getPlayerInputPanelTwo().getInputName();
 			String diffPoints =newGameWindow.getDiffPointTextField().getText();
-			
-			//check iff diffPoints is a number
-			try {
-				pointDiff = Integer.parseInt(diffPoints);
-				
-			} catch (NumberFormatException ex) {
-				JOptionPane.showMessageDialog(null, "Keine Zahl eingegeben!!");
-
-				JTextField textField = newGameWindow.getDiffPointTextField();
-				textField.requestFocus();
-				textField.selectAll();
-				return;
-			}
 		
 			//check first name
 			if(pOneName.length()==0)
@@ -80,9 +67,10 @@ public class NewGameWindowListener implements ActionListener {
 
 				return;
 			}
+			
 			//check pointdiff input
 			
-			else if(diffPoints.length() == 0)
+			else if(diffPoints.length() == 0 || !neulib.Utils.isNumeric(diffPoints))
 			{
 				JOptionPane.showMessageDialog(null, "bitte eingaben ueberpruefen");
 
