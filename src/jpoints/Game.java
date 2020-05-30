@@ -81,6 +81,8 @@ public class Game {
 	 */
 	public String toString()
 	{
+		String oldStr = super.toString();
+		
 		String gameString = "";
 		
 		for(int i = 0; i<players.size();i++)
@@ -91,7 +93,7 @@ public class Game {
 		}
 		
 		gameString += Integer.toString(pointDiffToWin);
-		gameString += " to Win /";
+		gameString += " to Win / "+ oldStr;
 		
 		
 		return gameString;

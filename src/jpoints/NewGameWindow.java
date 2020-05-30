@@ -28,8 +28,7 @@ public class NewGameWindow {
 	JButton cancelButton;
 	
 	Game newGame;
-	
-	
+
 	MainWindow mainWindow;
 	
 	public NewGameWindow(MainWindow parentWindow) {

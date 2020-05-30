@@ -1,7 +1,6 @@
 package jpoints.Listener;
 
 import jpoints.Game;
-import jpoints.MainWindow;
 import jpoints.NewGameWindow;
 import jpoints.Player;
 
@@ -91,10 +90,7 @@ public class NewGameWindowListener implements ActionListener {
 			this.newGame.addPlayer(pOne);
 			this.newGame.addPlayer(pTwo);
 			
-			newGameWindow.getMainWindow().showMainGamePanel();
-			newGameWindow.getMainWindow().setGame(newGame);
-			
-			
+			newGameWindow.getMainWindow().showMainGamePanel(newGame);
 			newGameWindow.dispose();
 		
 			break;

@@ -49,29 +49,27 @@ public class MainWindow {
         newGame.addActionListener(menuActionListener);
         exit.addActionListener(menuActionListener);
         info.addActionListener(menuActionListener);
-
-
-
-        mainWindow.setJMenuBar(menuBar);
         
-      
-
+        mainWindow.setJMenuBar(menuBar);
+ 
     }
 
     public JFrame getFrame()
     {
     	return mainWindow;
     }
-    
-    //TODO show mainpanel
-    public void showMainGamePanel()
+
+    public void showMainGamePanel(Game game)
     {
-    	
-    	mainGamePanel = new MainGamePanel(game);
-    	
-    	//mainWindow.add(mainGamePanel);
-    	
-    	
+    	if(game!=null)
+    	{
+    		
+    		mainGamePanel = new MainGamePanel(game);
+    		this.game = game;
+    		
+    		mainWindow.add(mainGamePanel);
+    		mainWindow.revalidate();
+    	}
     }
     
 
@@ -82,12 +80,5 @@ public class MainWindow {
     public Game getGame()
     {
     	return game;
-    	
     }
-
-	public void setGame(Game newGame) {
-		game = newGame;
-		
-	}
-
 }

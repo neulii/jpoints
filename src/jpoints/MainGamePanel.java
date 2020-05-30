@@ -8,21 +8,20 @@ public class MainGamePanel extends JPanel {
 	PlayerInputPanel pOnePoints;
 	PlayerInputPanel pTwoPoints;
 	
-	
+	//TODO mainpanel gehört noch gemacht
 	public MainGamePanel(Game game)
 	{
 		this.game = game;
 		setLayout(null);
 		
+		pOnePoints = new PlayerInputPanel(100, 200, 40, game.getPlayers().elementAt(0).getName(), 20);
+		pOnePoints.setLocation(20, 50);
+		this.add(pOnePoints);
 		
-	
-		System.out.println(game);
 		
-//		pOnePoints = new PlayerInputPanel(100, 200, 40, game.getPlayers().elementAt(0).getName(), 20);
-//		pOnePoints.setLocation(50, 50);
-//		
-//		pTwoPoints = new PlayerInputPanel(100, 200, 40, game.getPlayers().elementAt(1).getName(), 20);
-//		pOnePoints.setLocation(50, 90);
+		pTwoPoints = new PlayerInputPanel(100, 200, 40, game.getPlayers().elementAt(1).getName(), 20);
+		pTwoPoints.setLocation(20, 120);
+		this.add(pTwoPoints);
 		
 	}
 }

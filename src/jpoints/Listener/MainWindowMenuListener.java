@@ -17,7 +17,6 @@ public class MainWindowMenuListener implements ActionListener {
     	this.window = window.getFrame();
     	this.game = game;
     	this.mainWindow = window;
-
     }
 
     public void actionPerformed(ActionEvent e)
