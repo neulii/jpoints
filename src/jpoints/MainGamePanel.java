@@ -4,11 +4,14 @@ import javax.swing.JPanel;
 
 public class MainGamePanel extends JPanel {
 
+	
+	private static final long serialVersionUID = -8749292918188412931L;
+
 	Game game;
 	PlayerInputPanel pOnePoints;
 	PlayerInputPanel pTwoPoints;
 	
-	//TODO mainpanel gehört noch gemacht
+	//TODO mainpanel gehoert noch gemacht
 	public MainGamePanel(Game game)
 	{
 		this.game = game;

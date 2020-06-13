@@ -8,6 +8,9 @@ import javax.swing.SwingConstants;
 
 public class PlayerInputPanel extends JPanel {
 	
+	
+	private static final long serialVersionUID = 7824360932468944010L;
+	
 	private JTextField inputName;
 	private JLabel playerNameLabel;
 
