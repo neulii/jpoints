@@ -50,6 +50,7 @@ public class NewGameWindow {
 		
 		window.getContentPane().add(createGameLabel);
 		
+		//setpanels
 		playerOne = new PlayerInputPanel(150,250,50,"spieler 1:",30);
 		playerOne.setLocation(30,50);
 		playerOne.setLabelBackground(Color.yellow);
@@ -62,29 +63,33 @@ public class NewGameWindow {
 		window.getContentPane().add(playerOne);
 		window.getContentPane().add(playerTwo);
 		
+		int buttonLineYPos = 260;
+		
+		//OKbutton
 		okButton = new JButton("OK");
-		okButton.setBounds(78, 260, 138, 52);
+		okButton.setBounds(78, buttonLineYPos, 138, 52);
 		window.getContentPane().add(okButton);
 		okButton.addActionListener(new NewGameWindowListener(this,newGame));
+		
 		//set default enter button
 		JRootPane rootPane = SwingUtilities.getRootPane(okButton);
 		rootPane.setDefaultButton(okButton);
 
-				
-				
+		//cancelbutton
 		cancelButton = new JButton("Abbrechen");
-		cancelButton.setBounds(230, 260, 138, 52);
+		cancelButton.setBounds(230, buttonLineYPos, 140, 52);
 		window.getContentPane().add(cancelButton);
 		
 		pointDiffLabel = new JLabel("Punkteunterschied zum Sieg:");
 		pointDiffLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		pointDiffLabel.setBounds(30, 199, 186, 37);
+		pointDiffLabel.setBounds(30, 200, 250, 37);
 		window.add(pointDiffLabel);
 		
 		pointDiffInput = new JTextField();
 		pointDiffInput.setHorizontalAlignment(SwingConstants.CENTER);
 		pointDiffInput.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		pointDiffInput.setBounds(230, 191, 138, 38);
+		pointDiffInput.setBounds(280, 191, 150, 38);
+		
 		window.add(pointDiffInput);
 		pointDiffInput.setColumns(10);
 		cancelButton.addActionListener(new NewGameWindowListener(this,newGame));
