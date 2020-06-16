@@ -38,7 +38,7 @@ public class MainGamePanel extends JPanel {
 		//rightpanel
 		rightPanel = new JPanel();
 		//rightPanel.setBackground(Color.blue);
-		
+		rightPanel.setLayout(new GridLayout(1,1));
 		
 		this.add(leftPanel);
 		this.add(rightPanel);
@@ -66,7 +66,9 @@ public class MainGamePanel extends JPanel {
         };
         //create table with data
         table = new JTable(data, columns);
-        table.setBounds(100, 200, 200, 100);
+        //table.setBounds(100, 200, 200, 100);
+       
+        
          
         JScrollPane pane = new JScrollPane(table);
         
