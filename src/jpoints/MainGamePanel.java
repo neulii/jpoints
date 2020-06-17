@@ -1,9 +1,6 @@
 package jpoints;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.Point;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -74,10 +71,9 @@ public class MainGamePanel extends JPanel {
         
       
         //add the table to the frame
-      rightPanel.add(pane);
+        rightPanel.add(pane);
+          
        
-        
-       // this.revalidate();
         
 	}
 }
