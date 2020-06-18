@@ -1,10 +1,13 @@
 package jpoints;
 
+import java.awt.Font;
 import java.awt.GridLayout;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
 
 public class MainGamePanel extends JPanel {
 
@@ -14,7 +17,10 @@ public class MainGamePanel extends JPanel {
 	Game game;
 	PlayerInputPanel pOnePoints;
 	PlayerInputPanel pTwoPoints;
+	
 	JTable table;
+	
+	JLabel pointDisplay;
 
 	JPanel leftPanel;
 	JPanel rightPanel;
@@ -28,7 +34,7 @@ public class MainGamePanel extends JPanel {
 		//Leftpanel
 		leftPanel = new JPanel();
 		//leftPanel.setBackground(Color.red);
-		leftPanel.setLayout(null);
+		leftPanel.setLayout(new GridLayout(3,1));
 		
 		
 		
@@ -39,6 +45,15 @@ public class MainGamePanel extends JPanel {
 		
 		this.add(leftPanel);
 		this.add(rightPanel);
+		
+		
+		
+		pointDisplay = new JLabel("Points: " + game.getPointDiffToWin() + " / " + game.getActualPointDiff());
+		pointDisplay.setHorizontalAlignment(SwingConstants.CENTER);
+		pointDisplay.setFont(new Font(pointDisplay.getName(), Font.PLAIN, 30));
+	
+		
+		leftPanel.add(pointDisplay);
 		
 		
 		
