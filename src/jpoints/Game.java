@@ -76,6 +76,19 @@ public class Game {
 		return pointDiffToWin;
 	}
 	
+	
+	/**
+	 * 
+	 * @return the actual pointdiffrence
+	 */
+	public int getActualPointDiff()
+	{
+		int actualPointDiff = 0;
+		actualPointDiff = players.elementAt(0).getPoints() - players.elementAt(1).getPoints();
+		
+		return  Math.abs(actualPointDiff);
+		
+	}
 	/**
 	 * new toString method
 	 */
