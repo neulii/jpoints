@@ -1,8 +1,12 @@
 package jpoints;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -15,6 +19,7 @@ public class MainGamePanel extends JPanel {
 	private static final long serialVersionUID = -8749292918188412931L;
 	
 	Game game;
+	
 	PlayerInputPanel pOnePoints;
 	PlayerInputPanel pTwoPoints;
 	
@@ -22,8 +27,12 @@ public class MainGamePanel extends JPanel {
 	
 	JLabel pointDisplay;
 
+	JButton enterPoints;
+	
 	JPanel leftPanel;
 	JPanel rightPanel;
+	
+	JPanel buttonPanel;
 	
 	//TODO mainpanel gehoert noch gemacht
 	public MainGamePanel(Game game)
@@ -34,7 +43,7 @@ public class MainGamePanel extends JPanel {
 		//Leftpanel
 		leftPanel = new JPanel();
 		//leftPanel.setBackground(Color.red);
-		leftPanel.setLayout(new GridLayout(3,1));
+		leftPanel.setLayout(new GridLayout(4,1));
 		
 		
 		
@@ -47,13 +56,15 @@ public class MainGamePanel extends JPanel {
 		this.add(rightPanel);
 		
 		
+	
 		
-		pointDisplay = new JLabel("Points: " + game.getPointDiffToWin() + " / " + game.getActualPointDiff());
+		
+		pointDisplay = new JLabel("Punkte: " + game.getPointDiffToWin() + " / " + game.getActualPointDiff());
 		pointDisplay.setHorizontalAlignment(SwingConstants.CENTER);
 		pointDisplay.setFont(new Font(pointDisplay.getName(), Font.PLAIN, 30));
 	
-		
 		leftPanel.add(pointDisplay);
+		
 		
 		
 		
@@ -64,6 +75,23 @@ public class MainGamePanel extends JPanel {
 		pTwoPoints = new PlayerInputPanel(100, 200, 40, game.getPlayers().elementAt(1).getName(), 20);
 		pTwoPoints.setLocation(20, 120);
 		leftPanel.add(pTwoPoints);
+		
+		buttonPanel = new JPanel();
+		buttonPanel.setLayout(null);
+		
+		
+		enterPoints = new JButton("Punkte eingeben");
+		enterPoints.setSize(new Dimension(120,40));
+		
+		
+		enterPoints.setLocation((buttonPanel.getWidth()-enterPoints.getWidth())/2, 20);
+	
+		buttonPanel.setBackground(Color.yellow);
+		buttonPanel.add(enterPoints);
+		
+		leftPanel.add(buttonPanel);
+
+		System.out.println(buttonPanel.getWidth() + "    " + enterPoints.getWidth());
 		
 		//headers for the table
         String[] columns = new String[] {
