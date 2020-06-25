@@ -1,10 +1,10 @@
 package jpoints;
 
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -34,6 +34,8 @@ public class MainGamePanel extends JPanel {
 	
 	JPanel buttonPanel;
 	
+	int buttonPanelWidth;
+	
 	//TODO mainpanel gehoert noch gemacht
 	public MainGamePanel(Game game)
 	{
@@ -45,8 +47,6 @@ public class MainGamePanel extends JPanel {
 		//leftPanel.setBackground(Color.red);
 		leftPanel.setLayout(new GridLayout(4,1));
 		
-		
-		
 		//rightpanel
 		rightPanel = new JPanel();
 		//rightPanel.setBackground(Color.blue);
@@ -55,18 +55,11 @@ public class MainGamePanel extends JPanel {
 		this.add(leftPanel);
 		this.add(rightPanel);
 		
-		
-	
-		
-		
 		pointDisplay = new JLabel("Punkte: " + game.getPointDiffToWin() + " / " + game.getActualPointDiff());
 		pointDisplay.setHorizontalAlignment(SwingConstants.CENTER);
 		pointDisplay.setFont(new Font(pointDisplay.getName(), Font.PLAIN, 30));
 	
 		leftPanel.add(pointDisplay);
-		
-		
-		
 		
 		pOnePoints = new PlayerInputPanel(100, 200, 40, game.getPlayers().elementAt(0).getName(), 20);
 		pOnePoints.setLocation(20, 50);
@@ -83,15 +76,12 @@ public class MainGamePanel extends JPanel {
 		enterPoints = new JButton("Punkte eingeben");
 		enterPoints.setSize(new Dimension(120,40));
 		
-		
-		enterPoints.setLocation((buttonPanel.getWidth()-enterPoints.getWidth())/2, 20);
-	
-		buttonPanel.setBackground(Color.yellow);
+		//buttonPanel.setBackground(Color.yellow);
 		buttonPanel.add(enterPoints);
 		
 		leftPanel.add(buttonPanel);
 
-		System.out.println(buttonPanel.getWidth() + "    " + enterPoints.getWidth());
+		//System.out.println(buttonPanel.getWidth() + "    " + enterPoints.getWidth());
 		
 		//headers for the table
         String[] columns = new String[] {
@@ -108,15 +98,37 @@ public class MainGamePanel extends JPanel {
         table = new JTable(data, columns);
         //table.setBounds(100, 200, 200, 100);
        
-        
-         
         JScrollPane pane = new JScrollPane(table);
         
-      
         //add the table to the frame
         rightPanel.add(pane);
-          
-       
         
+        
+        //Add componentlistener
+        this.addComponentListener(new ComponentListener() {
+			
+			@Override
+			public void componentShown(ComponentEvent e) {
+			
+			}
+			
+			
+			//Layouting enterPoints Button
+			@Override
+			public void componentResized(ComponentEvent e) {
+				buttonPanelWidth = buttonPanel.getWidth();
+				enterPoints.setLocation((buttonPanelWidth-enterPoints.getWidth())/2, 20);
+			}
+			
+			@Override
+			public void componentMoved(ComponentEvent e) {
+				
+			}
+			
+			@Override
+			public void componentHidden(ComponentEvent e) {
+				
+			}
+		});   
 	}
 }
